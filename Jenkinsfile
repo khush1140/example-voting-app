@@ -11,6 +11,9 @@ pipeline{
         booleanParam(name: 'TEST_CASES', defaultValue: true, description: '')
         choice(name: 'ENV', choices: ['dev', 'qa', 'uat'], description: '')
     }
+    triggers {
+        cron('H/5 * * * *')
+    }
     stages{
         stage("Docker build and push"){
             steps{
