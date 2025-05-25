@@ -34,8 +34,9 @@ pipeline{
         stage ("parallel testing")
         when {
                 branch 'develop'
-                environment name: 'DEPLOY_TO', value: 'qa'{
-            parallel{
+                environment name: 'DEPLOY_TO', value: 'qa'
+        }
+            stages("parallel"){
                 stage("Linux Test"){
                     steps{
                         sh "echo linux"
