@@ -5,10 +5,10 @@ pipeline{
             steps{
                 sh "docker login -u khushbooheda11 -p Khushboo@4321"
                 sh '''
-                cd vote
-                docker build -t khushbooheda11/vote:v${BUILD_NUMBER} .
+                      cd vote
+                docker build -t khushboo/vote:v${BUILD_NUMBER} .
                 '''
-                sh "docker push khushbooheda11/vote:v${BUILD_NUMBER}"
+                sh "docker push khushboo/vote:v${BUILD_NUMBER}"
         
             }
         }
