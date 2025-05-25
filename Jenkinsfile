@@ -31,7 +31,10 @@ pipeline{
                 sh "echo docker deploy"
             }
         }
-        stage ("parallel testing"){
+        stage ("parallel testing")
+        when {
+                branch 'develop'
+                environment name: 'DEPLOY_TO', value: 'qa'{
             parallel{
                 stage("Linux Test"){
                     steps{
