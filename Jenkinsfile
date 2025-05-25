@@ -31,5 +31,21 @@ pipeline{
                 sh "echo docker deploy"
             }
         }
+        stage ("parallel testing"){
+            parallel{
+                stage("Linux Test"){
+                    steps{
+                        sh "echo linux"
+                        sh "sleep 180"
+                    }
+                }  
+                stage("Windows Test"){
+                    steps{
+                        sh "echo windows"
+                        sh "sleep 180"
+    }
+}
+            }
+        }
     }
 }
